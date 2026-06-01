@@ -21,9 +21,10 @@
 ```bash
 # 1. 克隆技能
 cd ~/.claude/skills
-git clone https://github.com/<your-username>/chinese-claude-skill.git
+git clone https://github.com/cjwcjd/chinese-claude-skill.git
 
 # 2. 安装 SessionStart hook（推荐——系统层注入）
+mkdir -p ~/.claude/hooks
 cp ~/.claude/skills/chinese-claude-skill/scripts/chinese-thinking-inject.js ~/.claude/hooks/
 ```
 
@@ -85,8 +86,8 @@ python scripts/audit-chinese.py transcript.md       # 扫描
 python scripts/audit-chinese.py transcript.md --json # JSON
 ```
 
-返回值：`0` = 零违规，`1` = 发现违规。
+返回值：`0` = 零违规，`1` = 发现违规，`2` = 文件不存在或参数错误。
 
-## 📄 License
+## 📄 许可证
 
 MIT
